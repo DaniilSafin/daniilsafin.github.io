@@ -1,4 +1,6 @@
-User-Agent: *
-Disallow: 
+User-agent: *
+Disallow: /*xml
+Disallow: /sitemap.xml
+Disallow: /robots.txt
 
 Sitemap: https://daniilsafin.github.io/sitemap.xml
