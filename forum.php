@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>Мини Чат!</title>
+<title>РњРёРЅРё-С‡Р°С‚СЉ!</title>
 </head>
 <frameset rows="30%,70%">
     <frame name="addmsg" src="addmsg.php">
