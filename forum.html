@@ -31,6 +31,11 @@
 
 <script src="lock.js"></script>
 <link rel="stylesheet" href="style.css">
+  
+  <link href='http://fonts.googleapis.com/css?family=Ubuntu&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+		<link href="main.css" rel="stylesheet" />
+		<script src="main.js" defer></script>
+		<meta charset="UTF-8">
 </HEAD>
 <body>
 <h1>Форум</h1>
@@ -40,60 +45,7 @@
 <li><a href="forum.html">Форум</a></li>
 <li><a href="contacts.html">Обратная связь</a></li>
 </ul>
-  
- <br /> 
-<script language="JavaScript" type="text/javascript" src="https://comet-server.ru/template/Profitable_site/js/jquery-2.0.3.min.js" ></script>
-<script language="JavaScript" type="text/javascript" src="https://comet-server.ru/CometServerApi.js" ></script>
-</head>
-<body>
-    <div id="WebChatFormForm" ></div> 
-    <input type="text" id="WebChatNameID" placeholder="Укажите ваше имя..." > <br>
-    <textarea id = "WebChatTextID" placeholder = "Отправьте сообщение в online чат..." ></textarea><br>
- 
-    <input type="button" onclick="web_send_msg();" value="Отправить" >
-    <div id="answer_div" ></div>
- 
-    <script>
-         // вырезает html теги
-         function strip(html)
-         {
-             var tmp = document.createElement("DIV");
-             tmp.innerHTML = html;
-             return tmp.textContent || tmp.innerText || "";
-         }
- 
-         // Отправляет сообщение в чат
-         function web_send_msg()
-         {
-             // Получение значений из элементов ввода.
-             var text = $("#WebChatTextID").val(); // Получаем текст сообщения
-             var name = $("#WebChatNameID").val(); // Получаем имя пользователя
- 
-             // Очистка поля с текстом сообщения
-             $("#WebChatTextID").val("");  
- 
-             // Добавление отправленного сообщения к списку сообщений.
-             $("#WebChatFormForm").append("<p><b>"+strip(name)+": </b>"+text+"</p>");
- 
-             // Отправка сообщения в канал чата
-             CometServer().web_pipe_send("web_chat_pipe", {"text":text, "name":name});
-         }
- 
- 
-         // Функция выполнится после загрузки страницы
-         $(document).ready(function()
-         {
-             CometServer().start({dev_id:1}) // Подключаемся к комет серверу
- 
-             // Подписываемся на канал в который и будут отправляться сообщения чата.
-             CometServer().subscription("web_chat_pipe", function(msg)
-             {
-                console.log(msg)
-                 // Добавление полученного сообщения к списку сообщений.
-                 $("#WebChatFormForm").append("<p><b>"+strip(msg.data.name)+": </b>"+msg.data.text+"</p>");
-             });
-         });
-    </script>
+
 <!-- Yandex.Metrika informer -->
 <a href="https://metrika.yandex.ru/stat/?id=56712373&amp;from=informer"
 target="_blank" rel="nofollow"><img src="https://informer.yandex.ru/informer/56712373/3_1_FFFFFFFF_EFEFEFFF_0_uniques"
